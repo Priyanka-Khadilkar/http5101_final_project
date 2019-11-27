@@ -18,6 +18,26 @@ textarea {
     max-width: 280px;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #563D7C;
+}
+
+.header-color {
+    background-color: #563D7C;
+    color : white;
+}
+
+.top{
+    margin-top : 30px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
