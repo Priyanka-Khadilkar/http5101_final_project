@@ -11,10 +11,8 @@ namespace http5101_final_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             CMSDB db = new CMSDB();
             ListNavigationContentPages(db);
-
 
         }
         private void ListNavigationContentPages(CMSDB db)

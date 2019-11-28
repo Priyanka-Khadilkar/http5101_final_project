@@ -24,6 +24,7 @@ namespace http5101_final_project
             //set that student data
             ContentPage.Title = contentpage_title.Text.Trim();
             ContentPage.Body = contentpage_body.Text.Trim();
+            ContentPage.PublishDate = DateTime.Now;
 
             //add the content page to the database
             db.AddContentPage(ContentPage);

@@ -44,8 +44,8 @@ namespace http5101_final_project
         public void AddContentPage(ContentPage new_contentpage)
         {
             //Query for inserting data into database
-            string query = "insert into content_pages (pagetitle, pagebody) values ('{0}','{1}')";
-            query = String.Format(query, new_contentpage.Title, new_contentpage.Body);
+            string query = "insert into content_pages (pagetitle, pagebody, publishdate) values ('{0}','{1}','{2}')";
+            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, new_contentpage.PublishDate.ToString("yyyy-MM-dd"));
 
             //DB connection
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
@@ -114,6 +114,9 @@ namespace http5101_final_project
                             case "pagebody":
                                 Current_ContentPage.Body = value;
                                 break;
+                            case "publishdate":
+                                Current_ContentPage.PublishDate = Convert.ToDateTime(value);
+                                break;
 
                         }
 
@@ -141,8 +144,8 @@ namespace http5101_final_project
         public void UpdateContentPage(int contentpage_id, ContentPage new_contentpage)
         {
             //Query for inserting data into database
-            string query = "update content_pages set pagetitle='{0}', pagebody='{1}' where page_id = {2}";
-            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, contentpage_id);
+            string query = "update content_pages set pagetitle='{0}', pagebody='{1}', publishdate='{2}' where page_id = {3}";
+            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, new_contentpage.PublishDate, contentpage_id);
 
             //DB connection
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
@@ -244,6 +247,9 @@ namespace http5101_final_project
                             case "pagebody":
                                 Current_ContentPage.Body = value;
                                 break;
+                            case "publishdate":
+                                Current_ContentPage.PublishDate = Convert.ToDateTime(value);
+                                break;
 
                         }
 
@@ -320,6 +326,9 @@ namespace http5101_final_project
                                 break;
                             case "pagebody":
                                 Current_ContentPage.Body = value;
+                                break;
+                            case "publishdate":
+                                Current_ContentPage.PublishDate = Convert.ToDateTime(value);
                                 break;
 
                         }

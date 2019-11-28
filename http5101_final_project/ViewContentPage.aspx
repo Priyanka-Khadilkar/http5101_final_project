@@ -12,11 +12,16 @@
         <div id="contentpage_body_panel" runat="server" class="panel-body">
             <div runat="server" id="teacher_detail">
                 <div class="form-group row">
+                    <label style="width: auto;" class="col-sm-2 col-form-label">Published On : </label>
+                    <div class="col-sm-10">
+                        <span id="contentpage_publishdate" runat="server"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-sm-10">
                         <asp:Label ID="contentpage_body" runat="server"></asp:Label>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

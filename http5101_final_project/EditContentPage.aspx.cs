@@ -44,6 +44,7 @@ namespace http5101_final_project
                 //set that content page data
                 ContentPage.Title = contentpage_title.Text.Trim();
                 ContentPage.Body = contentpage_body.Text.Trim();
+                ContentPage.PublishDate = DateTime.Now;
 
                 //update the content page to the database
                 db.UpdateContentPage(Convert.ToInt32(ContentPage_Id), ContentPage);

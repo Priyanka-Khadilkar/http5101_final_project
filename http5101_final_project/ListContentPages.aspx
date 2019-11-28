@@ -15,6 +15,7 @@
                 AutoGenerateColumns="false" OnRowCommand="contentpages_list_gridview_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="Title" HeaderText="Title" />
+                    <asp:BoundField DataField="PublishDate" DataFormatString="{0:yyyy/MM/dd}" HeaderText="Published Date" />
                     <asp:TemplateField ShowHeader="false">
                         <ItemTemplate>
                             <asp:Button ID="teacher_view_action" runat="server" CausesValidation="false" CssClass="btn btn-success" CommandName="view_contentpage"
