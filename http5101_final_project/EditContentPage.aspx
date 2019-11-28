@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateContentPage.aspx.cs" Inherits="http5101_final_project.CreateContentPage" %>
-
-<asp:Content ID="create_contentpage" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="panel panel-primary top">
-        <div class="panel-heading header-color">
-            Create Content Page
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditContentPage.aspx.cs" Inherits="http5101_final_project.EditContentPage" %>
+<asp:Content ID="edit_contentpage" ContentPlaceHolderID="MainContent" runat="server">
+     <div class="panel panel-primary top">
+        <div class="panel-heading">
+            Edit Content Page
         </div>
         <div class="panel-body">
             <div class="form-horizontal">
@@ -23,16 +22,12 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <asp:Button ID="btn_submit" OnClick="btn_submit_Click" CssClass="btn btn-success" CausesValidation="true" runat="server" Text="Add" />
-                        <asp:Button ID="btn_cancel" CssClass="btn btn-success" OnClick="btn_cancel_Click" CausesValidation="false" runat="server" Text="Clear" />
+                        <asp:Button ID="btn_submit" OnClick="btn_submit_Click" CssClass="btn header-color" CausesValidation="true" runat="server" Text="Add" />
+                        <asp:Button ID="btn_cancel" CssClass="btn header-color" CausesValidation="false" runat="server" Text="Clear" />
+                        <asp:Button ID="btn_back" CssClass="btn header-color" CausesValidation="false" runat="server" Text="Back" />
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <asp:Button ID="btn_back" CssClass="btn header-color" OnClick="btn_back_Click" CausesValidation="false" runat="server" Text="Back" />
         </div>
     </div>
 </asp:Content>

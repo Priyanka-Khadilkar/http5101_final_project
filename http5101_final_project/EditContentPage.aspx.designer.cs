@@ -10,7 +10,7 @@
 namespace http5101_final_project {
     
     
-    public partial class CreateContentPage {
+    public partial class EditContentPage {
         
         /// <summary>
         /// contentpage_title control.

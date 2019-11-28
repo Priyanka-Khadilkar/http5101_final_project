@@ -7,34 +7,12 @@ namespace http5101_final_project
 {
     public class ContentPage
     {
+        
+        public string Title { get; set; }
 
-        //private fields for content page
-        private string Title;
-        private string Body;
+        public string Body { get; set; }
 
-        //return the private content of page title
-        public string GetPageTitle()
-        {
-            return Title;
-        }
-
-        //return the private content of page body
-        public string GetPageBody()
-        {
-            return Body;
-        }
-
-        //set the value of private content of page title
-        public void SetPageTitle(string value)
-        {
-            Title = value;
-        }
-
-        //set the value of private content of page title
-        public void SetPageBody(string value)
-        {
-            Body = value;
-        }
+        public int Id { get; set; }
 
 
     }

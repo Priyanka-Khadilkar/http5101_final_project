@@ -10,7 +10,7 @@
 namespace http5101_final_project {
     
     
-    public partial class CreateContentPage {
+    public partial class ViewContentPage {
         
         /// <summary>
         /// contentpage_title control.
@@ -19,7 +19,25 @@ namespace http5101_final_project {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contentpage_title;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contentpage_title;
+        
+        /// <summary>
+        /// contentpage_body_panel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contentpage_body_panel;
+        
+        /// <summary>
+        /// teacher_detail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teacher_detail;
         
         /// <summary>
         /// contentpage_body control.
@@ -28,33 +46,15 @@ namespace http5101_final_project {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contentpage_body;
+        protected global::System.Web.UI.WebControls.Label contentpage_body;
         
         /// <summary>
-        /// btn_submit control.
+        /// back_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
-        
-        /// <summary>
-        /// btn_cancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancel;
-        
-        /// <summary>
-        /// btn_back control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_back;
+        protected global::System.Web.UI.WebControls.Button back_btn;
     }
 }

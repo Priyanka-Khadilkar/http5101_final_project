@@ -10,51 +10,42 @@
 namespace http5101_final_project {
     
     
-    public partial class CreateContentPage {
+    public partial class ListContentPages {
         
         /// <summary>
-        /// contentpage_title control.
+        /// add_content_button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contentpage_title;
+        protected global::System.Web.UI.WebControls.Button add_content_button;
         
         /// <summary>
-        /// contentpage_body control.
+        /// search_keyword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contentpage_body;
+        protected global::System.Web.UI.WebControls.TextBox search_keyword;
         
         /// <summary>
-        /// btn_submit control.
+        /// search_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
+        protected global::System.Web.UI.WebControls.Button search_btn;
         
         /// <summary>
-        /// btn_cancel control.
+        /// contentpages_list_gridview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancel;
-        
-        /// <summary>
-        /// btn_back control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_back;
+        protected global::System.Web.UI.WebControls.GridView contentpages_list_gridview;
     }
 }
