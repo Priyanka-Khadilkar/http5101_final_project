@@ -22,6 +22,24 @@ namespace http5101_final_project {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl contentpage_title;
         
         /// <summary>
+        /// delete_contentpage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton delete_contentpage;
+        
+        /// <summary>
+        /// edit_contentpage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton edit_contentpage;
+        
+        /// <summary>
         /// contentpage_body_panel control.
         /// </summary>
         /// <remarks>

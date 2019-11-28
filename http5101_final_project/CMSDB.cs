@@ -141,8 +141,8 @@ namespace http5101_final_project
         public void UpdateContentPage(int contentpage_id, ContentPage new_contentpage)
         {
             //Query for inserting data into database
-            string query = "update content_pages set pagetitle='{0}', pagebody='{1}' where page_id = '{2}'";
-            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, new_contentpage.Id);
+            string query = "update content_pages set pagetitle='{0}', pagebody='{1}' where page_id = {2}";
+            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, contentpage_id);
 
             //DB connection
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
@@ -265,7 +265,6 @@ namespace http5101_final_project
             return Result_ContentPage;
         }
 
-
         /// <summary>
         /// List of all content pages
         /// </summary>
@@ -287,7 +286,7 @@ namespace http5101_final_project
                 }
                 else
                 {
-                    query = "select * from content_pages where pagetitle = '{0}'";
+                    query = "select * from content_pages where pagetitle like '%{0}%'";
                     query = String.Format(query, search_keyword);
                 }
 

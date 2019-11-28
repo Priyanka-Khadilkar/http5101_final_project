@@ -1,12 +1,13 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="http5101_final_project.SiteMaster" %>
 
+<%@ Register Src="~/ContentPagesNavigation.ascx" TagName="ContentPagesNavigation" TagPrefix="asp" %>
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Content Management Sysytem</title>
+    <title><%: Page.Title %> - CMS</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -46,14 +47,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Content Management System</a>
+                    <a class="navbar-brand" runat="server" href="ListContentPages.aspx">CMS</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a href="About.aspx">About</a></li>
-                        <li><a href="Contact.aspx">Contact</a></li>
-                    </ul>
+                    <asp:ContentPagesNavigation runat="server"></asp:ContentPagesNavigation>
                 </div>
             </div>
         </div>

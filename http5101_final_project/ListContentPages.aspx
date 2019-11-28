@@ -4,7 +4,7 @@
     <asp:Button ID="add_content_button" OnClick="add_content_button_Click" CssClass="floatright btn btn-primary topmargin " runat="server" Text="Add Content Page" />
     <div class="panel panel-primary top">
         <div class="panel-heading header-color">
-            Content Page
+            Content Pages
         </div>
         <div class="panel-body">
             <div class="marginbottom">

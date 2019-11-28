@@ -44,5 +44,27 @@ namespace http5101_final_project
                 contentpage_body_panel.InnerHtml = "There was an error finding that Content Page.";
             }
         }
+
+        protected void delete_contentpage_Click(object sender, EventArgs e)
+        {
+            bool valid = true;
+            string ContentPage_Id = Request.QueryString["id"];
+            if (String.IsNullOrEmpty(ContentPage_Id)) valid = false;
+
+            //We will attempt to get the record we need
+            if (valid)
+            {
+                CMSDB db = new CMSDB();
+                db.DeleteContentPage(Int32.Parse(ContentPage_Id));
+                Response.Redirect("ListContentPages.aspx");
+            }
+
+        }
+
+        protected void edit_contentpage_Click(object sender, EventArgs e)
+        {
+            string ContentPage_Id = Request.QueryString["id"];
+            Response.Redirect("EditContentPage.aspx?id=" + ContentPage_Id.Trim());
+        }
     }
 }

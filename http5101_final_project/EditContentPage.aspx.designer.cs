@@ -13,6 +13,15 @@ namespace http5101_final_project {
     public partial class EditContentPage {
         
         /// <summary>
+        /// contentpage_body_panel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contentpage_body_panel;
+        
+        /// <summary>
         /// contentpage_title control.
         /// </summary>
         /// <remarks>
@@ -38,15 +47,6 @@ namespace http5101_final_project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_submit;
-        
-        /// <summary>
-        /// btn_cancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancel;
         
         /// <summary>
         /// btn_back control.
