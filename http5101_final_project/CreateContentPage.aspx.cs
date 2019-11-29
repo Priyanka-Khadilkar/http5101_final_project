@@ -34,7 +34,9 @@ namespace http5101_final_project
 
         protected void btn_cancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateContentPage.aspx");
+            //clear the text of controls
+            contentpage_title.Text = string.Empty;
+            contentpage_body.Text = string.Empty;
         }
 
         protected void btn_back_Click(object sender, EventArgs e)
