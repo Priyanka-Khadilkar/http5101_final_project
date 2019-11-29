@@ -59,7 +59,7 @@
             </asp:ContentPlaceHolder>
         </div>
         <footer class="footer">
-            &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
+            &copy; <%: DateTime.Now.Year %> - CMS
         </footer>
     </form>
 </body>

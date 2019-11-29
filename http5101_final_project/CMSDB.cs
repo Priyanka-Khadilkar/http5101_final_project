@@ -81,7 +81,7 @@ namespace http5101_final_project
             try
             {
                 //Query for fetching all data
-                string query = "select * from content_pages";
+                string query = "select * from content_pages order by publishdate desc";
 
                 //open the db connection
                 Connect.Open();
@@ -173,7 +173,7 @@ namespace http5101_final_project
         /// <param name="contentpage_id">Id of content page</param>
         public void DeleteContentPage(int contentpage_id)
         {
-            //Query for inserting data into database
+            //Query for deleting data by id
             string query = "delete from content_pages where page_id = {0}";
             query = String.Format(query, contentpage_id);
 
@@ -183,14 +183,14 @@ namespace http5101_final_project
             try
             {
                 Connect.Open();
-                //Execute query to insert data into database
+                //Execute query to delete data 
                 cmd.ExecuteNonQuery();
 
             }
             catch (Exception ex)
             {
                 //track errors and exception in debug window
-                Debug.WriteLine("Something went wrong in the AddContentPage Method!");
+                Debug.WriteLine("Something went wrong in the DeleteContentPage Method!");
                 Debug.WriteLine(ex.ToString());
             }
 
@@ -206,11 +206,11 @@ namespace http5101_final_project
         {
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
 
-            //Create a blank list of contentpages
+            //Create a blank  contentpages
             ContentPage Result_ContentPage = new ContentPage();
             try
             {
-                //Query for fetching all data
+                //Query for fetching data by content page id
                 string query = "select * from content_pages where page_id = {0}";
                 query = String.Format(query, contentpage_id);
 
@@ -263,7 +263,7 @@ namespace http5101_final_project
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Something went wrong in the List Content Pages method!");
+                Debug.WriteLine("Something went wrong in the GetContentPageById method!");
                 Debug.WriteLine(ex.ToString());
             }
 
@@ -272,7 +272,7 @@ namespace http5101_final_project
         }
 
         /// <summary>
-        /// List of all content pages
+        /// List of all content pages according to search keyword
         /// </summary>
         /// <returns></returns>
         public List<ContentPage> SearchContentPagesByPageTitle(string search_keyword)
@@ -288,11 +288,11 @@ namespace http5101_final_project
                 //Query for fetching all data with search keyword
                 if (string.IsNullOrEmpty(search_keyword))
                 {
-                    query = "select * from content_pages";
+                    query = "select * from content_pages order by publishdate desc";
                 }
                 else
                 {
-                    query = "select * from content_pages where pagetitle like '%{0}%'";
+                    query = "select * from content_pages where pagetitle like '%{0}%' order by publishdate desc";
                     query = String.Format(query, search_keyword);
                 }
 

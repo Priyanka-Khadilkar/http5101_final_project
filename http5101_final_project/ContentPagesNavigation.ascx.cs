@@ -11,8 +11,12 @@ namespace http5101_final_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CMSDB db = new CMSDB();
-            ListNavigationContentPages(db);
+            if (!Page.IsPostBack)
+            {
+                CMSDB db = new CMSDB();
+                //Connection to db and fetch all content pages
+                ListNavigationContentPages(db);
+            }
 
         }
         private void ListNavigationContentPages(CMSDB db)
@@ -23,6 +27,7 @@ namespace http5101_final_project
 
             foreach (ContentPage page in ContentPage_List)
             {
+                //Set the Main navigation to all content pages page title
                 string url = "<li><a href='ViewContentPage.aspx?id={0}'>{1}</a></li>";
                 url = string.Format(url, page.Id, page.Title);
                 header_nav.InnerHtml += url;

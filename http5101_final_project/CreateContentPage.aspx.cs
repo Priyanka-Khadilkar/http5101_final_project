@@ -21,7 +21,7 @@ namespace http5101_final_project
 
             //create a new content page
             ContentPage ContentPage = new ContentPage();
-            //set that student data
+            //set content page data
             ContentPage.Title = contentpage_title.Text.Trim();
             ContentPage.Body = contentpage_body.Text.Trim();
             ContentPage.PublishDate = DateTime.Now;
@@ -34,8 +34,7 @@ namespace http5101_final_project
 
         protected void btn_cancel_Click(object sender, EventArgs e)
         {
-            contentpage_title.Text = string.Empty;
-            contentpage_body.Text = string.Empty;
+            Response.Redirect("CreateContentPage.aspx");
         }
 
         protected void btn_back_Click(object sender, EventArgs e)
