@@ -45,7 +45,7 @@ namespace http5101_final_project
         {
             //Query for inserting data into database
             string query = "insert into content_pages (pagetitle, pagebody, publishdate) values ('{0}','{1}','{2}')";
-            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, new_contentpage.PublishDate.ToString("yyyy-MM-dd"));
+            query = String.Format(query, new_contentpage.Title, new_contentpage.Body, new_contentpage.PublishDate.ToString("yyyy-MM-dd H:mm:ss"));
 
             //DB connection
             MySqlConnection Connect = new MySqlConnection(ConnectionString);

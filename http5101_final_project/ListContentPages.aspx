@@ -8,7 +8,7 @@
         </div>
         <div class="panel-body">
             <div class="marginbottom">
-                <asp:TextBox ID="search_keyword" placeholder="Search.." runat="server"></asp:TextBox>
+                <asp:TextBox ID="search_keyword" placeholder="Search Page Title.." runat="server"></asp:TextBox>
                 <asp:Button ID="search_btn" OnClick="search_btn_Click" CssClass="btn btn-success" runat="server" Text="Search" />
             </div>
             <asp:GridView ID="contentpages_list_gridview" CssClass="table table-hover table-striped" runat="server" GridLines="None"

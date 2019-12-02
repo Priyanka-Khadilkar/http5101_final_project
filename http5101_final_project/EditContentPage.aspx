@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2">Page Title :</label>
                     <div class="col-sm-10">
-                        <asp:TextBox ID="contentpage_title" placeholder="Enter page title" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="contentpage_title" MaxLength="100" placeholder="Enter page title" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="contentpage_title" ForeColor="Red" ErrorMessage="Please Enter Page Title."></asp:RequiredFieldValidator>
                     </div>
                 </div>
