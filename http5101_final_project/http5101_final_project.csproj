@@ -134,7 +134,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateContentPage.aspx" />
-    <Content Include="DBScript\Content_Pages_table.sql" />
+    <Content Include="Data\Content_Pages_table.sql" />
     <Content Include="Default.aspx" />
     <Content Include="EditContentPage.aspx" />
     <Content Include="favicon.ico" />
