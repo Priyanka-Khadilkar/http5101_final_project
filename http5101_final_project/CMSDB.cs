@@ -117,6 +117,9 @@ namespace http5101_final_project
                             case "publishdate":
                                 Current_ContentPage.PublishDate = Convert.ToDateTime(value);
                                 break;
+                            case "is_published":
+                                Current_ContentPage.Is_Published = Convert.ToBoolean(value);
+                                break;
 
                         }
 
@@ -330,6 +333,9 @@ namespace http5101_final_project
                             case "publishdate":
                                 Current_ContentPage.PublishDate = Convert.ToDateTime(value);
                                 break;
+                            case "is_published":
+                                Current_ContentPage.Is_Published = Convert.ToBoolean(value);
+                                break;
 
                         }
 
@@ -347,6 +353,110 @@ namespace http5101_final_project
 
             Connect.Close();
             return ContentPages_List;
+        }
+
+        /// <summary>
+        /// List of all content pages for navigation Menu
+        /// </summary>
+        /// <returns></returns>
+        public List<ContentPage> GetNavigationMenuData()
+        {
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+
+            //Create a blank list of contentpages
+            List<ContentPage> ContentPages_List = new List<ContentPage>();
+
+            try
+            {
+
+                string query = "select page_id, pagetitle from content_pages where is_published = true  order by publishdate desc ";
+
+                //open the db connection
+                Connect.Open();
+
+                //Run out query 
+                MySqlCommand cmd = new MySqlCommand(query, Connect);
+                //grab the result set
+                MySqlDataReader resultset = cmd.ExecuteReader();
+
+                //read through the result set
+                while (resultset.Read())
+                {
+                    //information that will store a single content page
+                    ContentPage Current_ContentPage = new ContentPage();
+
+                    //Look at each column in the result set row, add both the column name and the column value to our Content page dictionary
+                    for (int i = 0; i < resultset.FieldCount; i++)
+                    {
+                        string key = resultset.GetName(i);
+                        string value = resultset.GetString(i);
+
+                        switch (key)
+                        {
+                            case "page_id":
+                                Current_ContentPage.Id = Convert.ToInt32(value);
+                                break;
+                            case "pagetitle":
+                                Current_ContentPage.Title = value;
+                                break;
+
+                        }
+
+                    }
+                    //Add the content page to the list of content pages
+                    ContentPages_List.Add(Current_ContentPage);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Something went wrong in the GetNavigationMenuData method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
+            return ContentPages_List;
+        }
+
+        /// <summary>
+        /// Publish and Unpublish content page
+        /// </summary>
+        /// <param name="contentpage_id"></param>
+        /// <returns></returns>
+        public void PublishUnpublishContentPage(int contentpage_id, bool is_published)
+        {
+            string query = "";
+            if (is_published)
+            {
+                //If user is publishing page then update published date too.
+                query = "update content_pages set is_published={0},publishdate='{2}' where page_id = {1}";
+                query = String.Format(query, is_published, contentpage_id, DateTime.Now.ToString("yyyy-MM-dd H:mm:ss"));
+            }
+            else
+            {
+                //If user is unpublish page then update is_published status only.
+                query = "update content_pages set is_published={0} where page_id = {1}";
+                query = String.Format(query, is_published, contentpage_id);
+            }
+
+            //DB connection
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            try
+            {
+                Connect.Open();
+                //Execute query to update data into database
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //track errors and exception in debug window
+                Debug.WriteLine("Something went wrong in the PublishUnpublishContentPage Method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
         }
 
 

@@ -23,7 +23,7 @@ namespace http5101_final_project
         {
 
             List<ContentPage> ContentPage_List = new List<ContentPage>();
-            ContentPage_List = db.ListContentPages();
+            ContentPage_List = db.GetNavigationMenuData();
 
             foreach (ContentPage page in ContentPage_List)
             {

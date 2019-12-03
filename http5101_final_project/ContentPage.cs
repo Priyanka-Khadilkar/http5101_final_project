@@ -21,6 +21,9 @@ namespace http5101_final_project
         //Publish Date of content Page
         public DateTime PublishDate { get; set; }
 
+        //Page is published or not
+        public bool Is_Published { get; set; }
+
 
     }
 }

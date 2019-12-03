@@ -18,10 +18,16 @@
                     <asp:BoundField DataField="PublishDate" DataFormatString="{0:yyyy/MM/dd}" HeaderText="Published Date" />
                     <asp:TemplateField ShowHeader="false">
                         <ItemTemplate>
-                            <asp:Button ID="teacher_view_action" runat="server" CausesValidation="false" CssClass="btn btn-success" CommandName="view_contentpage"
-                                Text="View" CommandArgument='<%# Eval("Id") %>' />
-                            <asp:Button ID="teacher_edit_action" runat="server" CausesValidation="false" CssClass="btn btn-success" CommandName="edit_contentpage"
-                                Text="Edit" CommandArgument='<%# Eval("Id") %>' />
+                            <asp:Button runat="server" Text='<%# ((bool)Eval("Is_Published") == true) ? "UnPublish" : "Publish" %>' CssClass="btn btn-success" CommandArgument='<%#Eval("Id")+","+ Eval("Is_Published")%>'
+                                CommandName="publish_unpublish_contentpage" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField ShowHeader="false">
+                        <ItemTemplate>
+                            <asp:LinkButton runat="server" ID="teacher_edit_action" ToolTip="Edit Content Page" CausesValidation="false" CommandName="edit_contentpage"
+                                Text="Edit" CommandArgument='<%# Eval("Id") %>'><span class="glyphicon glyphicon-edit icon-color"></span></asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="teacher_view_action" ToolTip="View Content Page" CssClass="padding20" CausesValidation="false" CommandName="view_contentpage"
+                                Text="View" Visible='<%# Eval("Is_Published") %>' CommandArgument='<%# Eval("Id") %>'><span class="glyphicon glyphicon-eye-open icon-color"></span></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

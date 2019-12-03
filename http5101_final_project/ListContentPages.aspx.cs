@@ -34,6 +34,17 @@ namespace http5101_final_project
             {
                 Response.Redirect("EditContentPage.aspx?id=" + e.CommandArgument.ToString());
             }
+            else if (e.CommandName == "publish_unpublish_contentpage")
+            {
+                string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
+                int Content_Id = Convert.ToInt32(commandArgs[0]);
+                bool Is_Published = Convert.ToBoolean(commandArgs[1]);
+
+                //Change the opposite status
+                CMSDB db = new CMSDB();
+                db.PublishUnpublishContentPage(Content_Id, !Is_Published);
+                Response.Redirect("ListContentPages.aspx");
+            }
 
         }
 

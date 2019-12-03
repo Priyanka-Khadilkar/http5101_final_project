@@ -35,14 +35,26 @@ textarea {
     color : white;
 }
 
+.icon-color {
+    color: #563D7C !important;
+    text-decoration : none !important;
+}
+
 .top{
     margin-top : 15px;
 }
 
-.deletebtn{
+.width {
+    width : 200px;
+}
 
-    color : white;
-    text-decoration : none;
+.padding20{
+    padding-left : 20px;
+}
+
+.deletebtn {
+    color: white;
+    text-decoration: none;
 }
 
 .topmargin {
