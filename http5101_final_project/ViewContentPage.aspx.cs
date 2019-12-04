@@ -33,7 +33,7 @@ namespace http5101_final_project
                 ContentPage ContentPage_Record = db.GetContentPageById(Int32.Parse(ContentPage_Id));
                 contentpage_title.InnerHtml = ContentPage_Record.Title;
                 contentpage_body.Text = ContentPage_Record.Body;
-                contentpage_publishdate.InnerText = ContentPage_Record.PublishDate.ToString("yyyy-MM-dd");
+                contentpage_publishdate.InnerText = ContentPage_Record.PublishDate.ToString("D");
             }
             else
             {
